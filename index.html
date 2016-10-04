@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script defer src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script defer src="controller.js"></script>
+</head>
+<body ng-app="nurmash" ng-controller="IndexCtrl">
+
+    <div class="login" ng-show="step=='login'" ng-cloak >
+        <img src="images/login.jpg" alt="">
+        <span class="anchor fb" ng-click="selectStep('promos_new')"></span>
+        <span class="anchor vk" ng-click="selectStep('promos_new')"></span>
+        <span class="anchor google" ng-click="selectStep('promos_new')"></span>
+    </div>
+
+    <div class="promos_new" ng-show="step == 'promos_new'" ng-cloak>
+        <img src="images/promos_new.jpg" alt="">
+        <span class="anchor to_promos_my" ng-click="selectStep('promos_my')"></span>
+        <span class="anchor to_promos_completed" ng-click="selectStep('promos_completed')"></span>
+        <span class="anchor to_prizes" ng-click="selectStep('prizes')"></span>
+        <span class="anchor to_user_photos" ng-click="selectStep('user_photos')"></span>
+
+        <span class="anchor to_new_contest_1" ng-click="selectStep('new_contest_1')"></span>
+    </div>
+
+    <div class="promos_my" ng-show="step == 'promos_my'" ng-cloak>
+        <img src="images/promos_my.jpg" alt="">
+        <span class="anchor to_promos_new" ng-click="selectStep('promos_new')"></span>
+        <span class="anchor to_promos_completed" ng-click="selectStep('promos_completed')"></span>
+        <span class="anchor to_prizes" ng-click="selectStep('prizes')"></span>
+        <span class="anchor to_user_photos" ng-click="selectStep('user_photos')"></span>
+
+    </div>
+
+    <div class="promos_completed" ng-show="step == 'promos_completed'" ng-cloak>
+        <img src="images/promos_completed.jpg" alt="">
+        <span class="anchor to_promos_my" ng-click="selectStep('promos_my')"></span>
+        <span class="anchor to_promos_new" ng-click="selectStep('promos_new')"></span>
+        <span class="anchor to_prizes" ng-click="selectStep('prizes')"></span>
+        <span class="anchor to_user_photos" ng-click="selectStep('user_photos')"></span>
+
+
+        <span class="anchor to_old_contest_1" ng-click="selectStep('old_contest_1')"></span>
+    </div>
+
+    <div class="prizes" ng-show="step == 'prizes'" ng-cloak>
+        <img src="images/prizes.jpg" alt="">
+        <span class="anchor to_promos_new_1" ng-click="selectStep('promos_new')"></span>
+        <span class="anchor to_user_photos" ng-click="selectStep('user_photos')"></span>
+    </div>
+
+    <div class="user_photos" ng-show="step == 'user_photos'" ng-cloak>
+        <img src="images/user_photos.jpg" alt="">
+        <span class="anchor to_promos_new_1" ng-click="selectStep('promos_new')"></span>
+        <span class="anchor to_prizes" ng-click="selectStep('prizes')"></span>
+        <span class="anchor to_user_updates" ng-click="selectStep('user_updates')"></span>
+        <span class="anchor to_participant_me" ng-click="selectStep('participant_me')"></span>
+    </div>
+
+    <div class="user_updates" ng-show="step == 'user_updates'" ng-cloak>
+        <img src="images/user_updates.jpg" alt="">
+        <span class="anchor to_promos_new_1" ng-click="selectStep('promos_new')"></span>
+        <span class="anchor to_prizes" ng-click="selectStep('prizes')"></span>
+        <span class="anchor to_user_photos" ng-click="selectStep('user_photos')"></span>
+        <span class="anchor to_user_photos_1" ng-click="selectStep('user_photos')"></span>
+    </div>
+
+    <div class="participant_me" ng-show="step == 'participant_me'" ng-cloak>
+        <img src="images/participant_me.jpg" alt="">
+        <span class="anchor to_back_user_photos" ng-click="selectStep('user_photos')"></span>
+    </div>
+
+    <div class="old_contest_1" ng-show="step == 'old_contest_1'" ng-cloak>
+        <img src="images/old_contest_1.jpg" alt="">
+
+        <span class="anchor to_participant_other" ng-click="selectStep('participant_other')"></span>
+        <span class="anchor to_old_contest_2" ng-click="selectStep('old_contest_2')">
+            <img src="bottom.png" alt="">
+        </span>
+    </div>
+
+    <div class="old_contest_2" ng-show="step == 'old_contest_2'" ng-cloak>
+        <img src="images/old_contest_2.jpg" alt="">
+
+        <span class="anchor to_old_contest_1_1" ng-click="selectStep('old_contest_1')">
+            <img src="top.png" alt="">
+        </span>
+    </div>
+
+    <div class="participant_other" ng-show="step == 'participant_other'" ng-cloak>
+        <img src="images/participant_other.jpg" alt="">
+        <span class="anchor to_back_user_photos" ng-click="selectStep('old_contest_1')"></span>
+
+    </div>
+
+    <div class="new_contest_1" ng-show="step == 'new_contest_1'" ng-cloak>
+        <img src="images/new_contest_1.jpg" alt="">
+
+
+        <span class="anchor to_old_contest_2" ng-click="selectStep('new_contest_2')">
+            <img src="bottom.png" alt="">
+        </span>
+        <span class="anchor to_new_contest_prizes" ng-click="selectStep('new_contest_prizes')"></span>
+
+    </div>
+
+    <div class="new_contest_prizes" ng-show="step == 'new_contest_prizes'" ng-cloak>
+        <img src="images/new_contest_prizes.jpg" alt="">
+
+
+        <span class="anchor to_old_contest_2" ng-click="selectStep('new_contest_2')">
+            <img src="bottom.png" alt="">
+        </span>
+    </div>
+
+    <div class="new_contest_2" ng-show="step == 'new_contest_2'" ng-cloak>
+        <img src="images/new_contest_2.jpg" alt="">
+        <span class="anchor to_old_contest_1_1" ng-click="selectStep('new_contest_1')">
+            <img src="top.png" alt="">
+        </span>
+
+        <span class="anchor to_step_list" ng-click="selectStep('step_list')"></span>
+    </div>
+
+    <div class="step_list" ng-show="step == 'step_list'" ng-cloak>
+        <img src="images/step_list.jpg" alt="">
+        <span class="anchor to_step_list" ng-click="selectStep('step_photo')"></span>
+    </div>
+
+    <div class="step_photo" ng-show="step == 'step_photo'" ng-cloak>
+        <img src="images/step_photo.jpg" alt="">
+        <span class="anchor to_step_photo_caption" ng-click="selectStep('step_photo_caption')"></span>
+    </div>
+
+    <div class="step_photo_caption" ng-show="step == 'step_photo_caption'" ng-cloak>
+        <img src="images/step_photo_caption.jpg" alt="">
+        <span class="anchor to_step_list" ng-click="selectStep('step_survey')"></span>
+    </div>
+
+    <div class="step_survey" ng-show="step == 'step_survey'" ng-cloak>
+        <img src="images/step_survey.jpg" alt="">
+        <span class="anchor to_step_list" ng-click="selectStep('step_done')"></span>
+    </div>
+
+    <div class="step_done" ng-show="step == 'step_done'" ng-cloak>
+        <img src="images/steps_done.jpg" alt="">
+        <span class="anchor to_step_list" ng-click="selectStep('participant_me')"></span>
+    </div>
+
+</body>
+</html>
