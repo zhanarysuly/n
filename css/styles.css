@@ -20,14 +20,16 @@ body > div{
 }
 
 .login .anchor{
-    width: 80%;
+    width: 350px;
     height: 57px;
     bottom: 169px;
-    left: 40px;
+    left: 50%;
+    margin-left: -175px;
+    border-radius: 24px;
 }
 
 .login .vk{
-    bottom: 95px;
+    bottom: 94px;
 }
 
 .login .google{
